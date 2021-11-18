@@ -1,0 +1,1 @@
+INSERT INTO tb_clients (name, cpf, income, birthDate, chrildren, created_At) VALUES ('Steve Harris', '53750918015', 45000.00, TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 2, NOW());	
