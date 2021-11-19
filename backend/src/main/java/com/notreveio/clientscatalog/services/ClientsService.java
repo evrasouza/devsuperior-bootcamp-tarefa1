@@ -1,14 +1,14 @@
 package com.notreveio.clientscatalog.services;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,10 +25,10 @@ public class ClientsService {
 	private ClientsRepository repository;
 
 	@Transactional(readOnly = true)
-	public List<ClientsDTO> findAll(){
-		List<Clients> list = repository.findAll();
+	public Page<ClientsDTO> findAllPaged(PageRequest pageRequest){
+		Page<Clients> list = repository.findAll(pageRequest);
 
-		return list.stream().map(x -> new ClientsDTO(x)).collect(Collectors.toList());
+		return list.map(x -> new ClientsDTO(x));
 	}
 
 	@Transactional(readOnly = true)
