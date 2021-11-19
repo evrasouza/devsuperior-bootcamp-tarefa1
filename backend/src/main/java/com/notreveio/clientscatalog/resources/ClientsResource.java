@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.notreveio.clientscatalog.entities.Clients;
+import com.notreveio.clientscatalog.dto.ClientsDTO;
 import com.notreveio.clientscatalog.services.ClientsService;
 
 @RestController
@@ -19,8 +19,8 @@ public class ClientsResource {
 	private ClientsService service;
 
 	@GetMapping
-	public ResponseEntity<List<Clients>> findAll(){
-		List<Clients> list = service.findAll();
+	public ResponseEntity<List<ClientsDTO>> findAll(){
+		List<ClientsDTO> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
