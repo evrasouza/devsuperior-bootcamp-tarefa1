@@ -1,1 +1,11 @@
-INSERT INTO tb_clients (name, cpf, income, birthDate, chrildren, created_At) VALUES ('Steve Harris', '53750918015', 45000.00, TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 2, NOW());	
+INSERT INTO tb_clients (name, cpf, income, birth_Date, chrildren, created_At) VALUES ('Steve Harris', '53750918015', 99000.00, TIMESTAMP WITH TIME ZONE '1952-06-05T20:50:07.12345Z', 2, NOW());
+INSERT INTO tb_clients (name, cpf, income, birth_Date, chrildren, created_At) VALUES ('Bruce Dickinson', '27407988064', 75000.00, TIMESTAMP WITH TIME ZONE '1952-04-26T20:50:07.12345Z', 2, NOW());
+INSERT INTO tb_clients (name, cpf, income, birth_Date, chrildren, created_At) VALUES ('Dave Murray', '35435410053', 75000.00, TIMESTAMP WITH TIME ZONE '1953-02-10T20:50:07.12345Z', 1, NOW());
+INSERT INTO tb_clients (name, cpf, income, birth_Date, chrildren, created_At) VALUES ('Adrian Smith', '93219815006', 50000.00, TIMESTAMP WITH TIME ZONE '1953-08-13T20:50:07.12345Z', 3, NOW());
+INSERT INTO tb_clients (name, cpf, income, birth_Date, chrildren, created_At) VALUES ('Janick Gers', '66828979010', 50000.00, TIMESTAMP WITH TIME ZONE '1954-12-07T20:50:07.12345Z', 2, NOW());
+INSERT INTO tb_clients (name, cpf, income, birth_Date, chrildren, created_At) VALUES ('Nicko Mcbrain', '91729275001', 60000.00, TIMESTAMP WITH TIME ZONE '1952-10-09T20:50:07.12345Z', 4, NOW());
+INSERT INTO tb_clients (name, cpf, income, birth_Date, chrildren, created_At) VALUES ('Paul Dianno', '66051137050', 4000.00, TIMESTAMP WITH TIME ZONE '1957-01-27T20:50:07.12345Z', 0, NOW());
+INSERT INTO tb_clients (name, cpf, income, birth_Date, chrildren, created_At) VALUES ('Clive Burr', '67251927004', 5500.00, TIMESTAMP WITH TIME ZONE '1956-12-23T20:50:07.12345Z', 0, NOW());
+INSERT INTO tb_clients (name, cpf, income, birth_Date, chrildren, created_At) VALUES ('Dennis Straton', '55577034035', 3000.00, TIMESTAMP WITH TIME ZONE '1957-03-08T20:50:07.12345Z', 3, NOW());
+INSERT INTO tb_clients (name, cpf, income, birth_Date, chrildren, created_At) VALUES ('Blaze Bayley', '76952216006', 15000.00, TIMESTAMP WITH TIME ZONE '1956-03-12T20:50:07.12345Z', 4, NOW());
+INSERT INTO tb_clients (name, cpf, income, birth_Date, chrildren, created_At) VALUES ('Paul Todd', '30900364017', 2000.00, TIMESTAMP WITH TIME ZONE '1958-05-17T20:50:07.12345Z', 3, NOW());
