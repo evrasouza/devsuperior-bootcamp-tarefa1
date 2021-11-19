@@ -24,7 +24,7 @@ public class Clients implements Serializable{
 	private String cpf;
 	private Double income;
 	private Instant birthDate;
-	private Integer chrildren;
+	private Integer children;
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant createdAt;
@@ -36,13 +36,13 @@ public class Clients implements Serializable{
 		
 	}
 
-	public Clients(Long id, String name, String cpf, Double income, Instant birthDate, Integer chrildren) {
+	public Clients(Long id, String name, String cpf, Double income, Instant birthDate, Integer children) {
 		this.id = id;
 		this.name = name;
 		this.cpf = cpf;
 		this.income = income;
 		this.birthDate = birthDate;
-		this.chrildren = chrildren;
+		this.children = children;
 	}
 
 	public Long getId() {
@@ -86,11 +86,11 @@ public class Clients implements Serializable{
 	}
 
 	public Integer getChrildren() {
-		return chrildren;
+		return children;
 	}
 
-	public void setChrildren(Integer chrildren) {
-		this.chrildren = chrildren;
+	public void setChildren(Integer children) {
+		this.children = children;
 	}
 	
 	@PrePersist

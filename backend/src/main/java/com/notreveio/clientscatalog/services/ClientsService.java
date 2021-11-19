@@ -41,7 +41,14 @@ public class ClientsService {
 	@Transactional
 	public ClientsDTO insert(ClientsDTO dto) {
 		Clients entity = new Clients();
-		copyDtoEntity(dto, entity);
+		//copyDtoEntity(dto, entity);
+		
+		entity.setName(dto.getName());
+		entity.setCpf(dto.getCpf());
+		entity.setIncome(dto.getIncome());
+		entity.setBirthDate(dto.getBirthDate());
+		entity.setChildren(dto.getChildren());
+		
 		entity = repository.save(entity);
 
 		return new ClientsDTO(entity);
@@ -76,7 +83,7 @@ public class ClientsService {
 		entity.setCpf(dto.getCpf());
 		entity.setIncome(dto.getIncome());
 		entity.setBirthDate(dto.getBirthDate());
-		entity.setChrildren(dto.getChrildren());
+		entity.setChildren(dto.getChildren());
 		
 	}
 
