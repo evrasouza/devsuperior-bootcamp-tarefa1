@@ -1,10 +1,10 @@
 package com.notreveio.clientscatalog.services.exceptions;
 
-public class EntityNotFoundExeception extends RuntimeException{
+public class ResourceNotFoundExeception extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
 
-	public EntityNotFoundExeception (String msg) {
+	public ResourceNotFoundExeception (String msg) {
 		super(msg);
 	}
 }

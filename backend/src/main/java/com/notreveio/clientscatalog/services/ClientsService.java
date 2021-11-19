@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.notreveio.clientscatalog.dto.ClientsDTO;
 import com.notreveio.clientscatalog.entities.Clients;
 import com.notreveio.clientscatalog.repositories.ClientsRepository;
-import com.notreveio.clientscatalog.services.exceptions.EntityNotFoundExeception;
+import com.notreveio.clientscatalog.services.exceptions.ResourceNotFoundExeception;
 
 @Service
 public class ClientsService {
@@ -29,7 +31,7 @@ public class ClientsService {
 	@Transactional(readOnly = true)
 	public ClientsDTO findById(Long id) {
 		Optional<Clients> obj = repository.findById(id);
-		Clients entity = obj.orElseThrow(() -> new EntityNotFoundExeception("Entity Not Found"));
+		Clients entity = obj.orElseThrow(() -> new ResourceNotFoundExeception("Entity Not Found"));
 		return new ClientsDTO(entity);
 	}
 
@@ -42,6 +44,18 @@ public class ClientsService {
 		return new ClientsDTO(entity);
 	}
 
+	@Transactional
+	public ClientsDTO update(Long id, ClientsDTO dto) {
+		try {
+			Clients entity = repository.getOne(id);
+			copyDtoEntity(dto, entity);
+			entity = repository.save(entity);
+			return new ClientsDTO(entity);
+		} catch (EntityNotFoundException e) {
+			throw new ResourceNotFoundExeception("Id Not Found" + id);
+		}
+	}
+	
 	private void copyDtoEntity(ClientsDTO dto, Clients entity) {
 		
 		entity.setName(dto.getName());
